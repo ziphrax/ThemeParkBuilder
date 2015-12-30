@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<AttractionsXMLDataObject>
+  <Attractions>
+    <Attraction Id="1" Name="Ticket Booth" Description="Allows up to 50 visitors per hour to enter the park." Cost="100" Happiness="1" Nausia="0" Attractiveness="0"></Attraction>
+    <Attraction Id="2" Name="Duck Pond" Description="A small hole in the ground filled with water and ducks" Cost="10" Happiness="5" Nausia="-1" Attractiveness="5"></Attraction>
+  </Attractions>
+</AttractionsXMLDataObject>
