@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5B1C3C5-41C2-43FA-A23E-D9CAFC784AFA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ThemeParkBuilder</RootNamespace>
-    <AssemblyName>ThemeParkBuilder</AssemblyName>
+    <RootNamespace>ThemeParkSimulator</RootNamespace>
+    <AssemblyName>ThemeParkSimulator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="controllers\AttractionController.cs" />
+    <Compile Include="controllers\ParkController.cs" />
+    <Compile Include="models\AttractionModel.cs" />
+    <Compile Include="models\ParkModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="data\attractions.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ThemeParkSimulator\ThemeParkSimulator.csproj">
-      <Project>{f41d4432-9394-4ec4-96e6-6e6e9a31dd16}</Project>
-      <Name>ThemeParkSimulator</Name>
-    </ProjectReference>
+    <Compile Include="services\AttractionService.cs" />
+    <Compile Include="services\ParkService.cs" />
+    <Compile Include="Simulator.cs" />
+    <Compile Include="XMLDataObjects\AttractionsXMLDataObject.cs" />
+    <Compile Include="XMLDataObjects\ParksXMLDataObject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

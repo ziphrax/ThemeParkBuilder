@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ThemeParkBuilder.services;
-using ThemeParkBuilder.XMLDataObjects;
+using ThemeParkSimulator.services;
+using ThemeParkSimulator.XMLDataObjects;
 
-namespace ThemeParkBuilder.controllers
+namespace ThemeParkSimulator.controllers
 {
     public class ParkController
     {

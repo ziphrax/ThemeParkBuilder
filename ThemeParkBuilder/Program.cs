@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using ThemeParkBuilder.controllers;
-using ThemeParkBuilder.services;
-using ThemeParkBuilder.XMLDataObjects;
-using ThemeParkBuilder.XMLObjects;
+using ThemeParkSimulator.controllers;
+using ThemeParkSimulator.XMLDataObjects;
+using ThemeParkSimulator.XMLObjects;
 
 namespace ThemeParkBuilder
 {
@@ -49,7 +44,7 @@ namespace ThemeParkBuilder
         }
 
         static void gameStartedMessage() {
-            Console.WriteLine("Theme Park Buiilder");
+            Console.WriteLine("Theme Park Buiilder - By David Jones");
             Console.WriteLine("-------------------------");
             Console.WriteLine("");
             Console.WriteLine("Welcome to theme park builder.");
@@ -98,8 +93,7 @@ namespace ThemeParkBuilder
 
         static void performAction(String action) {
             switch (action) {                
-                case "List Actions":
-                    increaseActionCount();
+                case "List Actions":                    
                     listAvailableActions();
                     break;
                 case "View Parks":
@@ -176,6 +170,7 @@ namespace ThemeParkBuilder
         }
 
         static void listAvailableActions() {
+            //How to map these better to user input?
             Console.WriteLine("");
             Console.WriteLine("Here are your available actions:");            
             Console.WriteLine("List Actions");

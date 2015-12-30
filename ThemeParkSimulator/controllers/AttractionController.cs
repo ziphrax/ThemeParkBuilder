@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ThemeParkBuilder.services;
-using ThemeParkBuilder.XMLObjects;
+﻿using ThemeParkSimulator.services;
+using ThemeParkSimulator.XMLObjects;
 
-namespace ThemeParkBuilder.controllers
+namespace ThemeParkSimulator.controllers
 {
     public class AttractionController
     {

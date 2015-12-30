@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkBuilder", "ThemeParkBuilder\ThemeParkBuilder.csproj", "{B5B1C3C5-41C2-43FA-A23E-D9CAFC784AFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkSimulator", "ThemeParkSimulator\ThemeParkSimulator.csproj", "{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B5B1C3C5-41C2-43FA-A23E-D9CAFC784AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B1C3C5-41C2-43FA-A23E-D9CAFC784AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B1C3C5-41C2-43FA-A23E-D9CAFC784AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

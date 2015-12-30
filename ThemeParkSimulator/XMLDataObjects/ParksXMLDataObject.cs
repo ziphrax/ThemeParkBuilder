@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using ThemeParkBuilder.XMLObjects;
+using ThemeParkSimulator.XMLObjects;
 
-namespace ThemeParkBuilder.XMLDataObjects
+namespace ThemeParkSimulator.XMLDataObjects
 {
     [XmlRoot()]
     public class ParksXMLDataObject
