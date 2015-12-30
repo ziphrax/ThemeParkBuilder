@@ -47,6 +47,9 @@ namespace ThemeParkSimulator.XMLDataObjects
         public Int32 CurrentVisitors { get; set; }
 
         [XmlAttribute]
+        public long CurrentTicks { get; set; }
+
+        [XmlAttribute]
         public String ParkName { get; set; }
 
         public List<Attraction> BuiltAttractions { get; set; }

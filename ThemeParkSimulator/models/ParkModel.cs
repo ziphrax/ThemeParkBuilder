@@ -13,6 +13,7 @@ namespace ThemeParkSimulator.models
         double TotalSpent { get; set; }
         double TotalEarnt { get; set; }
         Int32 ActionCount { get; set; }
+        long CurrentTicks { get; set; }
         DateTime CreatedDate { get; set; }
         Int32 CurrentVisitors { get; set; }
         String ParkName { get; set; }

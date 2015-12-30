@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using ThemeParkSimulator;
 using ThemeParkSimulator.controllers;
 using ThemeParkSimulator.XMLDataObjects;
 using ThemeParkSimulator.XMLObjects;
@@ -11,9 +13,12 @@ namespace ThemeParkBuilder
     {
         static double StartingMoney = 2000.00;      
         static bool running = true;
+
         static AttractionsXMLDataObject attractionsData;
         static ParksXMLDataObject parksData;
         static Park selectedPark;
+
+        static Simulator Simulation;        
 
         //controllers
         static AttractionController attractionController;
@@ -23,11 +28,10 @@ namespace ThemeParkBuilder
         {
             Console.WriteLine("Initilising Application...");
             setupControllers();
+            readRequiredData();
             Console.Clear();
 
-            gameStartedMessage();
-
-            readRequiredData();          
+            gameStartedMessage();           
 
             string NextAction = "";
 
@@ -41,6 +45,28 @@ namespace ThemeParkBuilder
             }
 
             closeGame();
+        }
+
+        static void startSimulation() {
+            if (selectedPark != null)
+            {
+                Console.WriteLine("Starting simulation...");
+                Simulation = new Simulator(ref selectedPark);
+                Simulation.Start();              
+            }
+            else {
+                Console.WriteLine("You must first select a park");
+            }            
+        }
+
+        static void stopSimulation() {
+            if (selectedPark != null)
+            {
+                Console.WriteLine("Stopping simulation...");
+                Simulation.RequestStop();
+                while (Simulation.IsRunning) ;
+                Console.WriteLine("Simulation has stopped!");
+            }
         }
 
         static void gameStartedMessage() {
@@ -91,6 +117,7 @@ namespace ThemeParkBuilder
             parkController.SaveParks(parksData);
         }
 
+        //I really should rewrite this...
         static void performAction(String action) {
             switch (action) {                
                 case "List Actions":                    
@@ -114,6 +141,12 @@ namespace ThemeParkBuilder
                 case "Create New Park":
                     newGameMessage();
                     successNewGameCreated();
+                    break;
+                case "Start Simulation":
+                    startSimulation();
+                    break;
+                case "Stop Simulation":
+                    stopSimulation();
                     break;
                 case "View Park Stats":
                     increaseActionCount();
@@ -139,6 +172,7 @@ namespace ThemeParkBuilder
                     Console.Clear();
                     break;
                 case "Quit":
+                    stopSimulation();
                     running = false;
                     break;
                 default:
@@ -162,6 +196,7 @@ namespace ThemeParkBuilder
             Console.WriteLine("Park Name: " + selectedPark.ParkName);
             Console.WriteLine("Created: " + selectedPark.CreatedDate);
             Console.WriteLine("Current Balance: £ " + selectedPark.CurrentBalance);
+            Console.WriteLine("Current Ticks: " + selectedPark.CurrentTicks);
             Console.WriteLine("Total Spent: £ " + selectedPark.TotalSpent);
             Console.WriteLine("Total Earnt: £ " + selectedPark.TotalEarnt);
             Console.WriteLine("Current Visitor Count: " + selectedPark.CurrentVisitors);
@@ -179,6 +214,8 @@ namespace ThemeParkBuilder
             Console.WriteLine("Save Parks");
             Console.WriteLine("Create New Park");
             Console.WriteLine("Select Park");
+            Console.WriteLine("Start Simulation");
+            Console.WriteLine("Stop Simulation");
             Console.WriteLine("View Park Stats");
             Console.WriteLine("View Available Attractions");
             Console.WriteLine("View Built Attractions");

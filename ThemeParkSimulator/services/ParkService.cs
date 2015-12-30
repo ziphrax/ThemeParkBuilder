@@ -38,7 +38,7 @@ namespace ThemeParkSimulator.services
                 file.Close();
             }
             catch (Exception e) {
-                Console.WriteLine("Could not save file :-(");
+                Console.WriteLine("Could not save file :-( {0}",e.Message);
             }           
            
         }
