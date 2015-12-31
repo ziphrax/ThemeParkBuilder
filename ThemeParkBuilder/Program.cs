@@ -196,12 +196,14 @@ namespace ThemeParkBuilder
             Console.WriteLine("Park Name: " + selectedPark.ParkName);
             Console.WriteLine("Created: " + selectedPark.CreatedDate);
             Console.WriteLine("Current Balance: £ " + selectedPark.CurrentBalance);
+            Console.WriteLine("Ticket Price: £ " + selectedPark.TicketPrice);
             Console.WriteLine("Current Ticks: " + selectedPark.CurrentTicks);
             Console.WriteLine("Total Spent: £ " + selectedPark.TotalSpent);
             Console.WriteLine("Total Earnt: £ " + selectedPark.TotalEarnt);
             Console.WriteLine("Current Visitor Count: " + selectedPark.CurrentVisitors);
             Console.WriteLine("Built Attractions: " + selectedPark.BuiltAttractions.Count);
             Console.WriteLine("Spent Actions: " + selectedPark.ActionCount);
+            Console.WriteLine("Current Rating: " + selectedPark.CurrentRating);
         }
 
         static void listAvailableActions() {

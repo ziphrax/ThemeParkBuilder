@@ -12,6 +12,8 @@ namespace ThemeParkSimulator.models
         double CurrentBalance { get; set; }
         double TotalSpent { get; set; }
         double TotalEarnt { get; set; }
+        double TicketPrice { get; set; }
+        double CurrentRating { get; set; }
         Int32 ActionCount { get; set; }
         long CurrentTicks { get; set; }
         DateTime CreatedDate { get; set; }

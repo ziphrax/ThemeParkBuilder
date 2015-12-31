@@ -32,6 +32,12 @@ namespace ThemeParkSimulator.XMLDataObjects
         public double CurrentBalance { get; set; }
 
         [XmlAttribute]
+        public double TicketPrice { get; set; }
+
+        [XmlAttribute]
+        public double CurrentRating { get; set; }
+
+        [XmlAttribute]
         public double TotalSpent { get; set; }
 
         [XmlAttribute]
