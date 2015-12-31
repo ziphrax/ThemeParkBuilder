@@ -29,7 +29,7 @@ namespace ThemeParkSimulator
             while (IsRunning) {
                 Timer.Reset();
                 Update(ref parkData);
-                while (Timer.GetTicks() < 50) ;
+                Thread.Sleep(50);
             }
             Console.WriteLine("Simulation stopped gracefully.");
         }

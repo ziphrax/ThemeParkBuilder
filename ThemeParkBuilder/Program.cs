@@ -12,7 +12,8 @@ namespace ThemeParkBuilder
     class Program
     {
         static double StartingMoney = 2000.00;      
-        static bool running = true;
+        static volatile bool running = true;
+        static volatile bool watch_running = true;
 
         static AttractionsXMLDataObject attractionsData;
         static ParksXMLDataObject parksData;
@@ -156,6 +157,12 @@ namespace ThemeParkBuilder
                     increaseActionCount();
                     viewAttractions( attractionsData.Attractions );
                     break;
+                case "Watch Park":
+                    watchPark();
+                    break;
+                case "Stop Watching":
+                    stopWatching();
+                    break;
                 case "View Built Attractions":
                     increaseActionCount();
                     viewAttractions(selectedPark.BuiltAttractions);
@@ -200,10 +207,27 @@ namespace ThemeParkBuilder
             Console.WriteLine("Current Ticks: " + selectedPark.CurrentTicks);
             Console.WriteLine("Total Spent: £ " + selectedPark.TotalSpent);
             Console.WriteLine("Total Earnt: £ " + selectedPark.TotalEarnt);
-            Console.WriteLine("Current Visitor Count: " + selectedPark.CurrentVisitors);
+            Console.WriteLine("Current Visitor Count: " + selectedPark.CurrentVisitors);            
             Console.WriteLine("Built Attractions: " + selectedPark.BuiltAttractions.Count);
             Console.WriteLine("Spent Actions: " + selectedPark.ActionCount);
             Console.WriteLine("Current Rating: " + selectedPark.CurrentRating);
+        }
+
+        static void watchPark() {
+            watch_running = true;
+            Thread watchPark = new Thread(watchingLoop);
+            watchPark.Start();
+        }
+
+        static void stopWatching() {
+            watch_running = false;
+        }
+
+        static void watchingLoop() {
+            while (running ) {
+                viewParkStats();
+                Thread.Sleep(2500);
+            }
         }
 
         static void listAvailableActions() {
@@ -221,6 +245,8 @@ namespace ThemeParkBuilder
             Console.WriteLine("View Park Stats");
             Console.WriteLine("View Available Attractions");
             Console.WriteLine("View Built Attractions");
+            Console.WriteLine("Watch Park");
+            Console.WriteLine("Stop Watching");
             Console.WriteLine("Build Attraction");
             Console.WriteLine("Reload Attractions Data");
             Console.WriteLine("Clear Console");
