@@ -16,7 +16,7 @@ namespace ThemeParkConsoleClient
         private static NetClient m_client;
         private static IPEndPoint m_masterServer;
         private static Dictionary<long, IPEndPoint[]> m_hostList;
-        private static bool isRunning = true;
+        private static volatile bool isRunning = true;
 
         static void Main(string[] args)
         {
@@ -28,6 +28,9 @@ namespace ThemeParkConsoleClient
 
             m_hostList = new Dictionary<long, IPEndPoint[]>();
 
+            Console.WriteLine("Server started; waiting 10 seconds...");
+            System.Threading.Thread.Sleep(10000);
+
             NetPeerConfiguration config = new NetPeerConfiguration("game");
             config.EnableMessageType(NetIncomingMessageType.UnconnectedData);
             config.EnableMessageType(NetIncomingMessageType.NatIntroductionSuccess);
@@ -38,14 +41,6 @@ namespace ThemeParkConsoleClient
             Thread networkingHandler = new Thread(HandleIncominging);
             networkingHandler.Start();
 
-            Thread userInputHandler = new Thread(handleUserInput);
-            userInputHandler.Start();
-
-            
-
-        }
-
-        static void handleUserInput() {
             while (isRunning)
             {
                 Console.WriteLine("What would you like to do?");
@@ -55,7 +50,7 @@ namespace ThemeParkConsoleClient
         }
 
         static void performAction(String action) {
-            switch (action.ToLower()) {
+            switch (action) {
                 case "View Commands":
                     ViewCommands();
                     break;
@@ -101,9 +96,7 @@ namespace ThemeParkConsoleClient
                                 m_hostList[id] = new IPEndPoint[] { hostInternal, hostExternal };
 
                                 // update combo box
-                                //m_mainForm.comboBox1.Items.Clear();
                                 foreach (var kvp in m_hostList)
-                                    // m_mainForm.comboBox1.Items.Add(kvp.Key.ToString() + " (" + kvp.Value[1] + ")");
                                     Console.WriteLine(kvp.Key.ToString() + " (" + kvp.Value[1] + ")");
 
                             }
@@ -122,7 +115,7 @@ namespace ThemeParkConsoleClient
             //
             // Send request for server list to master server
             //
-            m_masterServer = new IPEndPoint(NetUtility.Resolve(masterServerAddress), CommonConstants.MasterServerPort);
+            m_masterServer = new IPEndPoint(NetUtility.Resolve("localhost"), 3000);
 
             NetOutgoingMessage listRequest = m_client.CreateMessage();
             listRequest.Write((byte)MasterServerMessageType.RequestHostList);
