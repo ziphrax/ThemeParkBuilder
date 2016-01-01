@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ThemeParkSimulator</RootNamespace>
-    <AssemblyName>ThemeParkSimulator</AssemblyName>
+    <RootNamespace>ThemeParkConsoleClient</RootNamespace>
+    <AssemblyName>ThemeParkConsoleClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,21 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\AttractionController.cs" />
-    <Compile Include="controllers\ParkController.cs" />
-    <Compile Include="models\AttractionModel.cs" />
-    <Compile Include="models\ParkModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="services\AttractionService.cs" />
-    <Compile Include="services\ParkService.cs" />
-    <Compile Include="Simulator.cs" />
-    <Compile Include="XMLDataObjects\AttractionsXMLDataObject.cs" />
-    <Compile Include="XMLDataObjects\ParksXMLDataObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Downloads\lidgren-network-gen3-master\lidgren-network-gen3-master\Lidgren.Network\Lidgren.Network.csproj">
       <Project>{49ba1c69-6104-41ac-a5d8-b54fa9f696e8}</Project>
       <Name>Lidgren.Network</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThemeParkCommon\ThemeParkCommon.csproj">
+      <Project>{6b2648a5-5eb3-4c5c-83fb-7fc3c5ca5aec}</Project>
+      <Name>ThemeParkCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

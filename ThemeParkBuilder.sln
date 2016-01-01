@@ -7,6 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkBuilder", "ThemePa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkSimulator", "ThemeParkSimulator\ThemeParkSimulator.csproj", "{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkServer", "ThemeParkServer\ThemeParkServer.csproj", "{CD088B54-2016-4AC8-89CE-910FC5F0485D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.Network", "..\..\..\..\Downloads\lidgren-network-gen3-master\lidgren-network-gen3-master\Lidgren.Network\Lidgren.Network.csproj", "{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkMasterServer", "ThemeParkMasterServer\ThemeParkMasterServer.csproj", "{A230098F-88F4-40CA-8AAF-D54DFE3E636D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkCommon", "ThemeParkCommon\ThemeParkCommon.csproj", "{6B2648A5-5EB3-4C5C-83FB-7FC3C5CA5AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkConsoleClient", "ThemeParkConsoleClient\ThemeParkConsoleClient.csproj", "{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +31,26 @@ Global
 		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F41D4432-9394-4EC4-96E6-6E6E9A31DD16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD088B54-2016-4AC8-89CE-910FC5F0485D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD088B54-2016-4AC8-89CE-910FC5F0485D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD088B54-2016-4AC8-89CE-910FC5F0485D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD088B54-2016-4AC8-89CE-910FC5F0485D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A230098F-88F4-40CA-8AAF-D54DFE3E636D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A230098F-88F4-40CA-8AAF-D54DFE3E636D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A230098F-88F4-40CA-8AAF-D54DFE3E636D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A230098F-88F4-40CA-8AAF-D54DFE3E636D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2648A5-5EB3-4C5C-83FB-7FC3C5CA5AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2648A5-5EB3-4C5C-83FB-7FC3C5CA5AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2648A5-5EB3-4C5C-83FB-7FC3C5CA5AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2648A5-5EB3-4C5C-83FB-7FC3C5CA5AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F2DCEC-F949-4A56-9EA5-FEC3C290DAF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
